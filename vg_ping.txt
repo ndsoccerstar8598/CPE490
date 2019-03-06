@@ -1,0 +1,14 @@
+PING vg.no (195.88.54.16) 56(84) bytes of data.
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=1 ttl=241 time=104 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=2 ttl=241 time=106 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=3 ttl=241 time=158 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=4 ttl=241 time=113 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=5 ttl=241 time=199 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=6 ttl=241 time=596 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=8 ttl=241 time=104 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=9 ttl=241 time=106 ms
+64 bytes from www.vg.no (195.88.54.16): icmp_seq=10 ttl=241 time=105 ms
+
+--- vg.no ping statistics ---
+10 packets transmitted, 9 received, 10% packet loss, time 9021ms
+rtt min/avg/max/mdev = 104.150/177.333/596.984/151.580 ms

@@ -1,0 +1,15 @@
+PING qq.com (111.161.64.40) 56(84) bytes of data.
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=1 ttl=51 time=235 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=2 ttl=51 time=242 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=3 ttl=51 time=263 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=4 ttl=51 time=631 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=5 ttl=51 time=252 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=6 ttl=51 time=234 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=7 ttl=51 time=627 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=8 ttl=51 time=234 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=9 ttl=51 time=235 ms
+64 bytes from dns40.online.tj.cn (111.161.64.40): icmp_seq=10 ttl=51 time=236 ms
+
+--- qq.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9001ms
+rtt min/avg/max/mdev = 234.465/319.298/631.407/155.229 ms

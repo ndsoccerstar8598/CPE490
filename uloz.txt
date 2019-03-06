@@ -1,0 +1,15 @@
+traceroute to uloz.to (77.48.29.99), 30 hops max, 60 byte packets
+ 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  1.479 ms  1.463 ms  1.550 ms
+ 2  * * *
+ 3  B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  8.752 ms  7.489 ms B3363.NWRKNJ-LCR-22.verizon-gni.net (100.41.200.156)  8.702 ms
+ 4  * * *
+ 5  * * *
+ 6  0.ae4.GW17.NYC4.ALTER.NET (140.222.1.137)  13.396 ms 0.ae3.GW17.NYC4.ALTER.NET (140.222.1.135)  12.840 ms 0.ae4.GW17.NYC4.ALTER.NET (140.222.1.137)  11.443 ms
+ 7  us-was02a-ri1-ge-2-0-6.aorta.net (213.46.190.77)  8.214 ms  8.165 ms  6.924 ms
+ 8  us-nyc01b-rd2-ae3-0.aorta.net (84.116.137.193)  107.282 ms  106.907 ms  105.725 ms
+ 9  * * *
+10  at-vie05d-rc1-ae19-0.aorta.net (84.116.134.122)  110.932 ms  121.957 ms  121.014 ms
+11  at-vie01b-rc1-ae29-0.aorta.net (84.116.140.1)  111.223 ms  108.453 ms  108.144 ms
+12  cz-prg02a-ra2-ae27-0.aorta.net (213.46.160.174)  111.367 ms  104.937 ms  115.786 ms
+13  cz-pra-pop1-rb1-bundle-ether5-129.aorta.net (84.116.131.154)  116.169 ms  116.131 ms  114.834 ms
+14  cz-pra-pop62-rb1-vla106.net.upc.cz (84.116.222.14)  114.719 ms  116.051 ms  120.757 ms

@@ -1,0 +1,15 @@
+PING dcfever.com (203.194.138.68) 56(84) bytes of data.
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=1 ttl=53 time=227 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=2 ttl=53 time=292 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=3 ttl=53 time=416 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=4 ttl=53 time=234 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=5 ttl=53 time=231 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=6 ttl=53 time=229 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=7 ttl=53 time=409 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=8 ttl=53 time=227 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=9 ttl=53 time=228 ms
+64 bytes from 203.194.138.68 (203.194.138.68): icmp_seq=10 ttl=53 time=229 ms
+
+--- dcfever.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9002ms
+rtt min/avg/max/mdev = 227.436/272.578/416.607/72.576 ms

@@ -1,0 +1,31 @@
+traceroute to samsung.com (211.45.27.231), 30 hops max, 60 byte packets
+ 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  31.069 ms  37.525 ms  37.623 ms
+ 2  * * *
+ 3  B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  39.681 ms B3363.NWRKNJ-LCR-22.verizon-gni.net (100.41.200.156)  47.422 ms B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  43.563 ms
+ 4  * * *
+ 5  * * *
+ 6  Bundle-Ether12.SCL2.ALTER.NET (140.222.233.202)  130.069 ms Bundle-Ether11.SCL2.ALTER.NET (140.222.233.200)  81.056 ms  92.588 ms
+ 7  samsung-gw.customer.alter.net (152.179.131.254)  92.716 ms  90.641 ms  86.876 ms
+ 8  u89.ppp66.samsung.co.kr (157.197.66.89)  221.348 ms  223.593 ms  281.441 ms
+ 9  u193.ppp80.samsung.co.kr (157.197.80.193)  285.792 ms u193.ppp81.samsung.co.kr (157.197.81.193)  283.508 ms u193.ppp80.samsung.co.kr (157.197.80.193)  288.506 ms
+10  u254.ppp80.samsung.co.kr (157.197.80.254)  273.073 ms u254.ppp81.samsung.co.kr (157.197.81.254)  212.376 ms  227.499 ms
+11  u210.ppp83.samsung.co.kr (157.197.83.210)  238.585 ms  253.077 ms u202.ppp83.samsung.co.kr (157.197.83.202)  253.021 ms
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *

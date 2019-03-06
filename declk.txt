@@ -1,0 +1,31 @@
+traceroute to www.declk.com (31.204.152.179), 30 hops max, 60 byte packets
+ 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  0.848 ms  1.159 ms  2.100 ms
+ 2  * * *
+ 3  B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  8.866 ms  10.982 ms B3363.NWRKNJ-LCR-22.verizon-gni.net (100.41.200.156)  11.881 ms
+ 4  * * *
+ 5  0.ae2.BR1.EWR6.ALTER.NET (140.222.237.225)  11.941 ms  12.039 ms  11.894 ms
+ 6  lag-12.ear3.Newark1.Level3.net (4.68.73.65)  11.579 ms  10.587 ms  10.368 ms
+ 7  ae-1-3111.edge4.London1.Level3.net (4.69.141.230)  79.613 ms  76.329 ms  73.335 ms
+ 8  interactive.edge4.London1.Level3.net (212.113.8.46)  93.850 ms  94.802 ms  94.749 ms
+ 9  100ge.br2-cr1.smartdc.rtm.i3d.net (188.122.95.84)  101.246 ms 100ge.br3-cr1.smartdc.rtm.i3d.net (109.200.218.245)  97.517 ms  138.331 ms
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *

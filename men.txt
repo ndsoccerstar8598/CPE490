@@ -1,0 +1,14 @@
+traceroute to www.men.gov.ma (196.200.143.116), 30 hops max, 60 byte packets
+ 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  2.759 ms  3.941 ms  3.990 ms
+ 2  * * *
+ 3  B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  13.943 ms B3363.NWRKNJ-LCR-22.verizon-gni.net (100.41.200.156)  14.785 ms  14.766 ms
+ 4  * * *
+ 5  * * *
+ 6  0.et-5-1-5.BR3.NYC4.ALTER.NET (140.222.2.127)  17.500 ms  13.422 ms 0.et-11-0-2.BR3.NYC4.ALTER.NET (140.222.239.39)  13.718 ms
+ 7  204.255.168.106 (204.255.168.106)  11.820 ms  7.793 ms  5.935 ms
+ 8  ae21.parigi52.par.seabone.net (195.22.210.107)  101.312 ms  103.823 ms  102.155 ms
+ 9  wana.parigi52.par.seabone.net (213.144.168.101)  94.521 ms  93.901 ms  91.400 ms
+10  * * *
+11  105.73.6.138 (105.73.6.138)  129.784 ms  136.409 ms  125.831 ms
+12  * * *
+13  www.men.gov.ma (196.200.143.116)  156.432 ms  133.331 ms  126.408 ms

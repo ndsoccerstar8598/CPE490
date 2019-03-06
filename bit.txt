@@ -1,0 +1,22 @@
+traceroute to www.bit.ly (67.199.248.10), 30 hops max, 60 byte packets
+ 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  38.248 ms  61.990 ms  73.150 ms
+ 2  * * *
+ 3  B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  77.616 ms B3363.NWRKNJ-LCR-22.verizon-gni.net (100.41.200.156)  292.349 ms B3363.NWRKNJ-LCR-21.verizon-gni.net (100.41.200.154)  292.322 ms
+ 4  * * *
+ 5  * * *
+ 6  0.ae11.GW14.NYC1.ALTER.NET (140.222.235.125)  292.145 ms 0.ae14.GW14.NYC1.ALTER.NET (140.222.235.131)  254.792 ms 0.ae11.GW14.NYC1.ALTER.NET (140.222.235.125)  231.013 ms
+ 7  vodafone-gw.customer.alter.net (204.148.1.254)  266.025 ms *  50.123 ms
+ 8  * * *
+ 9  * po110.bs-a.sech-lga.netarch.akamai.com (23.57.97.243)  57.783 ms  65.776 ms
+10  * * po576-10.bs-a.sech-ams.netarch.akamai.com (72.52.1.179)  75.499 ms
+11  ae121.access-a.sech-lga.netarch.akamai.com (23.57.97.251)  94.166 ms ae120.access-a.sech-lga.netarch.akamai.com (23.57.97.249)  94.138 ms  25.076 ms
+12  93.191.173.130 (93.191.173.130)  29.400 ms 93.191.173.122 (93.191.173.122)  85.238 ms  78.846 ms
+13  * * *
+14  ae6.cbs01.eq01.sjc02.networklayer.com (50.97.17.74)  146.703 ms * *
+15  * ae1.cbs02.cs01.den01.networklayer.com (50.97.17.88)  146.676 ms *
+16  * * *
+17  * * ae1.cbs02.cs01.wdc05.networklayer.com (169.45.19.110)  146.470 ms
+18  * * *
+19  * * 83.76.3fa9.ip4.static.sl-reverse.com (169.63.118.131)  134.414 ms
+20  * po1004.fcr01a.wdc04.networklayer.com (169.55.118.175)  92.382 ms *
+21  bit.ly (67.199.248.10)  84.374 ms !X * *

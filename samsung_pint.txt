@@ -1,0 +1,15 @@
+PING e1722.x.akamaiedge.net (104.123.1.21) 56(84) bytes of data.
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=1 ttl=60 time=14.8 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=2 ttl=60 time=6.61 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=3 ttl=60 time=6.82 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=4 ttl=60 time=5.93 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=5 ttl=60 time=31.2 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=6 ttl=60 time=18.2 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=7 ttl=60 time=16.4 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=8 ttl=60 time=7.62 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=9 ttl=60 time=4.38 ms
+64 bytes from a104-123-1-21.deploy.static.akamaitechnologies.com (104.123.1.21): icmp_seq=10 ttl=60 time=5.90 ms
+
+--- e1722.x.akamaiedge.net ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 4.389/11.812/31.279/8.034 ms

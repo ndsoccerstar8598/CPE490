@@ -1,0 +1,512 @@
+ NOTE: So the pinging output is displayed here after each traceroute output. At the end of each ping is a statistic yielding of max/avg/min/stddev so for our average we can see the number is the second one in the stats output. But there then is a statement of "The avg for this sites..." And yields a number either really close or not close. This is because I ran an AWK file that took a different 10 ping values and average those which are included in a zip file alongside the AWK file itself. - Besnik Balaj
+
+
+ 1  openrg (192.168.1.1)  2.302 ms  1.682 ms  6.755 ms
+ 2  10.240.170.153 (10.240.170.153)  13.065 ms  15.850 ms  22.168 ms
+ 3  67.59.248.216 (67.59.248.216)  12.400 ms  12.885 ms  13.740 ms
+ 4  dstswr1-ge1-1.rh.bynnnj.cv.net (67.83.243.6)  18.049 ms  14.718 ms  15.099 ms
+ 5  451be007.cst.lightpath.net (65.19.114.7)  16.061 ms
+    67.59.239.123 (67.59.239.123)  16.373 ms  20.740 ms
+ 6  64.15.0.86 (64.15.0.86)  18.756 ms
+    64.15.2.74 (64.15.2.74)  21.342 ms
+    64.15.3.138 (64.15.3.138)  28.123 ms
+ 7  * * be3033.rcr21.ewr02.atlas.cogentco.com (154.54.11.77)  16.755 ms
+ 8  be3363.ccr42.jfk02.atlas.cogentco.com (154.54.3.125)  16.879 ms
+    be2600.rcr23.jfk01.atlas.cogentco.com (154.54.40.29)  18.548 ms
+    be3363.ccr42.jfk02.atlas.cogentco.com (154.54.3.125)  16.358 ms
+ 9  be2317.ccr41.lon13.atlas.cogentco.com (154.54.30.186)  83.867 ms
+    be2490.ccr42.lon13.atlas.cogentco.com (154.54.42.86)  91.453 ms
+    be2897.ccr42.jfk02.atlas.cogentco.com (154.54.84.213)  17.649 ms
+10  be3487.ccr51.lhr01.atlas.cogentco.com (154.54.60.6)  92.797 ms
+    be2490.ccr42.lon13.atlas.cogentco.com (154.54.42.86)  87.356 ms
+    be3487.ccr51.lhr01.atlas.cogentco.com (154.54.60.6)  89.049 ms
+11  be3488.ccr52.lhr01.atlas.cogentco.com (154.54.60.14)  86.963 ms
+    be3487.ccr51.lhr01.atlas.cogentco.com (154.54.60.6)  88.110 ms
+    be3488.ccr52.lhr01.atlas.cogentco.com (154.54.60.14)  86.992 ms
+12  be3672.agr21.lhr01.atlas.cogentco.com (130.117.48.146)  88.737 ms
+    a100-row.demarc.cogentco.com (149.14.196.218)  95.830 ms
+    be3671.agr21.lhr01.atlas.cogentco.com (130.117.48.138)  89.122 ms
+13  * 52.94.34.52 (52.94.34.52)  110.107 ms
+    a100-row.demarc.cogentco.com (149.14.196.218)  97.251 ms
+14  52.94.35.93 (52.94.35.93)  88.053 ms *
+    52.94.34.56 (52.94.34.56)  94.148 ms
+15  52.94.35.74 (52.94.35.74)  98.937 ms
+    52.94.35.91 (52.94.35.91)  89.669 ms
+    52.94.35.112 (52.94.35.112)  86.929 ms
+16  52.94.33.191 (52.94.33.191)  89.031 ms  92.150 ms
+    52.94.33.193 (52.94.33.193)  89.522 ms
+17  52.94.33.187 (52.94.33.187)  87.022 ms
+    52.94.33.48 (52.94.33.48)  86.810 ms
+    52.94.33.187 (52.94.33.187)  88.391 ms
+18  * 52.94.33.40 (52.94.33.40)  88.120 ms  91.839 ms
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+/////////////////////////////////////////////////////////////////
+PING cluster90-elbwpeel-wugrpm69dhcc-1093586822.eu-west-2.elb.amazonaws.com (35.176.119.85): 56 data bytes
+64 bytes from 35.176.119.85: icmp_seq=0 ttl=237 time=88.128 ms
+64 bytes from 35.176.119.85: icmp_seq=1 ttl=237 time=93.250 ms
+64 bytes from 35.176.119.85: icmp_seq=2 ttl=237 time=92.170 ms
+64 bytes from 35.176.119.85: icmp_seq=3 ttl=237 time=93.344 ms
+64 bytes from 35.176.119.85: icmp_seq=4 ttl=237 time=91.864 ms
+64 bytes from 35.176.119.85: icmp_seq=5 ttl=237 time=93.580 ms
+64 bytes from 35.176.119.85: icmp_seq=6 ttl=237 time=92.658 ms
+64 bytes from 35.176.119.85: icmp_seq=7 ttl=237 time=93.056 ms
+64 bytes from 35.176.119.85: icmp_seq=8 ttl=237 time=92.181 ms
+64 bytes from 35.176.119.85: icmp_seq=9 ttl=237 time=93.899 ms
+
+--- cluster90-elbwpeel-wugrpm69dhcc-1093586822.eu-west-2.elb.amazonaws.com ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 88.128/92.413/93.899/1.562 ms
+
+The avg for this site's RTT is 95.138000
+/////////////////////////////////////////////////////////////////
+For website 1: www.politico.edu, we see that the path takes us from JFk->Lon->JFK(which wastes time and extends the distance)->LHR(an airport near London) and then Denmark. This path is more time consuming due to the return to JFK and the send off to two separate airports in London as opposed to just one and full send off.
+
+###############################################################
+###############################################################
+
+ 1  openrg (192.168.1.1)  7.988 ms  2.462 ms  2.273 ms
+ 2  10.240.170.153 (10.240.170.153)  12.636 ms  10.618 ms  12.129 ms
+ 3  67.59.248.208 (67.59.248.208)  22.754 ms  12.900 ms  13.686 ms
+ 4  dstswr1-ge2-2.rh.bynnnj.cv.net (67.83.243.2)  16.882 ms  12.135 ms  24.765 ms
+ 5  64.15.7.80 (64.15.7.80)  17.437 ms
+    67.59.239.121 (67.59.239.121)  15.184 ms  25.700 ms
+ 6  64.15.3.114 (64.15.3.114)  18.487 ms
+    64.15.0.68 (64.15.0.68)  31.266 ms
+    64.15.2.70 (64.15.2.70)  17.185 ms
+ 7  rtr7-ge2-1.in.nycmnyzr.cv.net (64.15.0.106)  30.216 ms  22.871 ms  24.869 ms
+ 8  tenge10-3.br03.ash01.pccwbtn.net (63.218.92.117)  23.726 ms * *
+ 9  63-218-232-49.static.pccwglobal.net (63.218.232.49)  127.664 ms
+    tenge0-0-0-7.br02.frf06.pccwbtn.net (63.218.232.45)  133.256 ms
+    63-218-232-49.static.pccwglobal.net (63.218.232.49)  118.648 ms
+10  63-218-233-6.static.pccwglobal.net (63.218.233.6)  123.683 ms  104.476 ms  112.741 ms
+11  mskn17ra-lo1.transtelecom.net (217.150.55.21)  182.005 ms  140.792 ms  159.779 ms
+12  deltatelecom-gw.transtelecom.net (188.43.3.245)  185.728 ms  172.375 ms  170.481 ms
+13  * * *
+14  smartsystem-deltatelecom-link-for-internet-xchange.az-ix.net (85.132.80.62)  186.262 ms  192.009 ms  174.742 ms
+15  mail2.trend.az (95.86.129.58)  196.363 ms !Z  169.879 ms !Z  196.468 ms !Z
+////////////////////////////////////////////////////////////////////////////
+
+PING trend.az (95.86.129.58): 56 data bytes
+64 bytes from 95.86.129.58: icmp_seq=0 ttl=51 time=187.333 ms
+64 bytes from 95.86.129.58: icmp_seq=1 ttl=51 time=185.691 ms
+64 bytes from 95.86.129.58: icmp_seq=2 ttl=51 time=185.338 ms
+64 bytes from 95.86.129.58: icmp_seq=3 ttl=51 time=189.090 ms
+64 bytes from 95.86.129.58: icmp_seq=4 ttl=51 time=182.390 ms
+64 bytes from 95.86.129.58: icmp_seq=5 ttl=51 time=185.139 ms
+64 bytes from 95.86.129.58: icmp_seq=6 ttl=51 time=187.306 ms
+64 bytes from 95.86.129.58: icmp_seq=7 ttl=51 time=185.250 ms
+64 bytes from 95.86.129.58: icmp_seq=8 ttl=51 time=186.553 ms
+64 bytes from 95.86.129.58: icmp_seq=9 ttl=51 time=183.501 ms
+
+--- trend.az ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 182.390/185.759/189.090/1.840 ms
+
+The avg for this site's RTT is 186.791000
+///////////////////////////////////////////////////////////////
+For destination 2: en.trend.az, we are jumping from NY -> NH with an airport at Nashua -> Frankfurt, Germany and the airport there. This is much longer than just starting from NY and heading to Germany.
+
+###############################################################
+###############################################################
+
+ 1  openrg (192.168.1.1)  3.668 ms  2.303 ms  3.403 ms
+ 2  10.240.170.153 (10.240.170.153)  13.450 ms  12.182 ms  15.437 ms
+ 3  67.59.248.218 (67.59.248.218)  12.697 ms  14.103 ms  15.666 ms
+ 4  67.83.243.4 (67.83.243.4)  16.089 ms  15.206 ms
+    dstswr1-ge1-1.rh.bynnnj.cv.net (67.83.243.6)  17.182 ms
+ 5  451be043.cst.lightpath.net (65.19.114.67)  16.566 ms
+    64.15.7.72 (64.15.7.72)  17.082 ms  15.110 ms
+ 6  64.15.0.68 (64.15.0.68)  17.866 ms
+    451be0ea.cst.lightpath.net (65.19.120.234)  14.903 ms
+    451be0de.cst.lightpath.net (65.19.120.222)  16.616 ms
+ 7  be3033.rcr21.ewr02.atlas.cogentco.com (154.54.11.77)  18.829 ms * *
+ 8  be2600.rcr23.jfk01.atlas.cogentco.com (154.54.40.29)  35.015 ms
+    be3363.ccr42.jfk02.atlas.cogentco.com (154.54.3.125)  17.233 ms
+    be3362.ccr41.jfk02.atlas.cogentco.com (154.54.3.9)  16.870 ms
+ 9  be2317.ccr41.lon13.atlas.cogentco.com (154.54.30.186)  90.753 ms
+    be2896.ccr41.jfk02.atlas.cogentco.com (154.54.84.201)  38.980 ms
+    be2317.ccr41.lon13.atlas.cogentco.com (154.54.30.186)  93.524 ms
+10  be2490.ccr42.lon13.atlas.cogentco.com (154.54.42.86)  88.025 ms
+    be12194.ccr41.ams03.atlas.cogentco.com (154.54.56.94)  94.816 ms
+    be12488.ccr42.ams03.atlas.cogentco.com (130.117.51.42)  97.143 ms
+11  be12488.ccr42.ams03.atlas.cogentco.com (130.117.51.42)  101.366 ms
+    be12194.ccr41.ams03.atlas.cogentco.com (154.54.56.94)  104.873 ms
+    be3676.rcr21.bru01.atlas.cogentco.com (154.54.57.178)  101.949 ms
+12  be3676.rcr21.bru01.atlas.cogentco.com (154.54.57.178)  100.499 ms
+    ipv4.cogent.bru1.combell.com (149.11.170.138)  99.492 ms
+    be3676.rcr21.bru01.atlas.cogentco.com (154.54.57.178)  100.392 ms
+13  * ipv4.cogent.bru1.combell.com (149.11.170.138)  106.208 ms *
+////////////////////////////////////////////////////////////////////
+
+PING www.euractiv.com (217.19.234.2): 56 data bytes
+64 bytes from 217.19.234.2: icmp_seq=0 ttl=48 time=110.247 ms
+64 bytes from 217.19.234.2: icmp_seq=1 ttl=48 time=101.715 ms
+64 bytes from 217.19.234.2: icmp_seq=2 ttl=48 time=108.529 ms
+64 bytes from 217.19.234.2: icmp_seq=3 ttl=48 time=110.673 ms
+64 bytes from 217.19.234.2: icmp_seq=4 ttl=48 time=109.860 ms
+64 bytes from 217.19.234.2: icmp_seq=5 ttl=48 time=112.874 ms
+64 bytes from 217.19.234.2: icmp_seq=6 ttl=48 time=110.229 ms
+64 bytes from 217.19.234.2: icmp_seq=7 ttl=48 time=110.443 ms
+64 bytes from 217.19.234.2: icmp_seq=8 ttl=48 time=110.688 ms
+64 bytes from 217.19.234.2: icmp_seq=9 ttl=48 time=108.811 ms
+
+--- www.euractiv.com ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 101.715/109.407/112.874/2.797 ms
+
+The avg for this site's RTT is 108.620000 
+/////////////////////////////////////////////////////////////////////
+For Destination 3: en.trend.az, this one makes more sense to me on the path start. Ignoring the return back to JFK for one line, it heads to London(probably now the hotspot of Europe for packet trafficking) and heads to Amsterdam. But it should've been sent to Brussels instead since its closer to London as opposed of having a middleman.
+
+#######################################################################
+#######################################################################
+
+ 1  openrg (192.168.1.1)  2.388 ms  1.004 ms  1.082 ms
+ 2  10.240.170.153 (10.240.170.153)  13.323 ms  13.688 ms  13.311 ms
+ 3  67.59.248.218 (67.59.248.218)  12.292 ms  12.823 ms  14.277 ms
+ 4  67.83.243.4 (67.83.243.4)  18.309 ms  15.256 ms  16.089 ms
+ 5  451be043.cst.lightpath.net (65.19.114.67)  14.518 ms
+    64.15.7.72 (64.15.7.72)  16.855 ms  17.274 ms
+ 6  64.15.2.74 (64.15.2.74)  19.002 ms  21.784 ms
+    64.15.3.138 (64.15.3.138)  35.512 ms
+ 7  64.15.0.204 (64.15.0.204)  39.520 ms  40.846 ms
+    451be0c2.cst.lightpath.net (65.19.113.194)  20.641 ms
+ 8  equinix.dc2.ash.oneandone.net (206.126.236.200)  33.396 ms  22.794 ms
+    equinix.bb-b.cr.chi.us.oneandone.net (208.115.136.24)  41.949 ms
+ 9  te-2-1.bb-c.tlx.nyc.us.oneandone.net (74.208.6.98)  41.181 ms  36.813 ms  36.055 ms
+10  ae-5.bb-b.slr.lxa.us.oneandone.net (74.208.1.86)  148.307 ms
+    te-2-2.bb-c.thn.lon.gb.oneandone.net (212.227.120.117)  123.968 ms  118.359 ms
+11  ae-0-0.bb-a.ba.slo.gb.oneandone.net (212.227.120.105)  93.869 ms
+    ae-3.bb-c.fil.qas.us.oneandone.net (74.208.1.65)  56.051 ms
+    ae-0-0.bb-a.ba.slo.gb.oneandone.net (212.227.120.105)  95.887 ms
+12  te-2-1.bb-c.tlx.nyc.us.oneandone.net (74.208.6.98)  61.807 ms
+    ae-11-0.bb-a.fra3.fra.de.oneandone.net (212.227.120.154)  106.806 ms  106.703 ms
+13  te-2-2.bb-c.thn.lon.gb.oneandone.net (212.227.120.117)  126.109 ms
+    xe-1-0-1.88.atuin.as6724.net (212.227.112.83)  105.409 ms  105.627 ms
+14  vl481.fiddlersriddle.as6724.net (81.169.144.121)  110.954 ms  110.570 ms  109.827 ms
+15  w89.rzone.de (81.169.145.89)  109.470 ms
+    ae-11-0.bb-a.fra3.fra.de.oneandone.net (212.227.120.154)  140.948 ms
+    w89.rzone.de (81.169.145.89)  117.835 ms
+//////////////////////////////////////////////////////////////////////
+
+PING news.ofthe.eu (81.169.145.89): 56 data bytes
+64 bytes from 81.169.145.89: icmp_seq=0 ttl=241 time=157.651 ms
+64 bytes from 81.169.145.89: icmp_seq=1 ttl=241 time=144.415 ms
+64 bytes from 81.169.145.89: icmp_seq=2 ttl=241 time=144.857 ms
+64 bytes from 81.169.145.89: icmp_seq=3 ttl=241 time=146.358 ms
+64 bytes from 81.169.145.89: icmp_seq=4 ttl=241 time=146.717 ms
+64 bytes from 81.169.145.89: icmp_seq=5 ttl=241 time=145.408 ms
+64 bytes from 81.169.145.89: icmp_seq=6 ttl=241 time=145.857 ms
+64 bytes from 81.169.145.89: icmp_seq=7 ttl=241 time=143.203 ms
+64 bytes from 81.169.145.89: icmp_seq=8 ttl=241 time=145.550 ms
+64 bytes from 81.169.145.89: icmp_seq=9 ttl=241 time=148.488 ms
+
+--- news.ofthe.eu ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 143.203/146.850/157.651/3.841 ms
+
+The avg for this site's RTT is 143.427000
+//////////////////////////////////////////////////////////////////////
+For Destination 4: news.ofthe.eu, we see here that we bounce around a lot. Chicago->NY->Lon->...->California->NY->France->London->France which is a lot of jumps around the world just to finish back at France expressing the weirdness of pinging to a location found in France and seeing it doesn't take the logical path that one might think.
+
+######################################################################
+######################################################################
+
+ 1  openrg (192.168.1.1)  2.212 ms  1.619 ms  2.360 ms
+ 2  10.240.170.153 (10.240.170.153)  12.861 ms  11.829 ms  14.010 ms
+ 3  67.59.248.216 (67.59.248.216)  14.226 ms  12.537 ms  15.921 ms
+ 4  dstswr1-ge1-1.rh.bynnnj.cv.net (67.83.243.6)  18.863 ms  16.442 ms
+    67.83.243.4 (67.83.243.4)  25.353 ms
+ 5  67.59.239.121 (67.59.239.121)  17.070 ms
+    67.59.251.66 (67.59.251.66)  26.367 ms  15.506 ms
+ 6  64.15.3.238 (64.15.3.238)  39.922 ms
+    451be049.cst.lightpath.net (65.19.114.73)  36.553 ms
+    64.15.2.200 (64.15.2.200)  16.601 ms
+ 7  * * *
+ 8  * * *
+ 9  ntt-level3-200g.newyorkcity6.level3.net (4.68.75.78)  23.012 ms  19.722 ms  17.269 ms
+10  ae-2.r24.nycmny01.us.bb.gin.ntt.net (129.250.3.180)  15.349 ms  16.278 ms  17.285 ms
+11  * ae-4.r22.sttlwa01.us.bb.gin.ntt.net (129.250.4.13)  91.245 ms  84.759 ms
+12  ae-13.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.4.143)  174.538 ms *  168.135 ms
+13  ae-2.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.3.33)  164.282 ms
+    ae-2.r02.tokyjp05.jp.bb.gin.ntt.net (129.250.3.22)  193.279 ms  167.504 ms
+14  ae-1.a00.tokyjp05.jp.bb.gin.ntt.net (129.250.4.26)  183.979 ms  170.951 ms
+    ae-0.a00.tokyjp05.jp.bb.gin.ntt.net (129.250.4.6)  191.676 ms
+15  xe-0-0-22-2.a00.tokyjp05.jp.ce.gin.ntt.net (61.213.145.182)  191.840 ms  182.114 ms  182.043 ms
+16  * * *
+17  * * *
+18  * * *
+/////////////////////////////////////////////////////////////////////
+PING www.ocn.ne.jp (153.254.170.142): 56 data bytes
+64 bytes from 153.254.170.142: icmp_seq=0 ttl=238 time=172.658 ms
+64 bytes from 153.254.170.142: icmp_seq=1 ttl=238 time=173.136 ms
+64 bytes from 153.254.170.142: icmp_seq=2 ttl=238 time=172.880 ms
+64 bytes from 153.254.170.142: icmp_seq=3 ttl=238 time=174.657 ms
+64 bytes from 153.254.170.142: icmp_seq=4 ttl=238 time=172.447 ms
+64 bytes from 153.254.170.142: icmp_seq=5 ttl=238 time=172.730 ms
+64 bytes from 153.254.170.142: icmp_seq=6 ttl=238 time=173.642 ms
+64 bytes from 153.254.170.142: icmp_seq=7 ttl=238 time=170.192 ms
+64 bytes from 153.254.170.142: icmp_seq=8 ttl=238 time=172.412 ms
+64 bytes from 153.254.170.142: icmp_seq=9 ttl=238 time=174.545 ms
+
+--- www.ocn.ne.jp ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 170.192/172.930/174.657/1.194 ms
+
+The avg for this site's RTT is 174.321000
+//////////////////////////////////////////////////////////////////
+For Destination 5: www.ocn.ne.jp, we get a way more reasonable where it goes from NY->Seattle->Tokyo which is nice, but it could've been NY->Cali->Japan but I am unsure on this distance variation to be better or not.
+
+##################################################################
+##################################################################
+
+ 1  openrg (192.168.1.1)  4.635 ms  1.267 ms  2.621 ms
+ 2  10.240.170.153 (10.240.170.153)  14.989 ms  16.795 ms  13.871 ms
+ 3  67.59.248.210 (67.59.248.210)  28.375 ms  19.248 ms  16.286 ms
+ 4  ool-4353f300.dyn.optonline.net.243.83.67.in-addr.arpa (67.83.243.0)  23.717 ms  27.893 ms  18.562 ms
+ 5  451be043.cst.lightpath.net (65.19.114.67)  15.238 ms
+    64.15.7.72 (64.15.7.72)  14.830 ms  15.599 ms
+ 6  64.15.2.74 (64.15.2.74)  19.497 ms  18.411 ms
+    64.15.3.138 (64.15.3.138)  19.365 ms
+ 7  lag-102.ear1.newark1.level3.net (4.35.20.29)  20.863 ms  21.807 ms  18.457 ms
+ 8  * * *
+ 9  telia-level3-200g.newyork6.level3.net (4.68.74.170)  15.964 ms  19.741 ms  18.600 ms
+10  nyk-bb4-link.telia.net (80.91.254.37)  27.992 ms  33.987 ms  32.542 ms
+11  ash-bb4-link.telia.net (62.115.136.201)  26.236 ms *  31.639 ms
+12  rest-b1-link.telia.net (62.115.117.116)  27.998 ms  25.636 ms
+    rest-b1-link.telia.net (62.115.121.216)  42.744 ms
+13  chinatelecom-ic-341442-rest-b1.c.telia.net (62.115.169.217)  29.113 ms  26.822 ms  28.622 ms
+14  * * *
+15  * * *
+16  * * *
+//////////////////////////////////////////////////////////////
+PING us01.router.didiglobal.com (117.51.1.4): 56 data bytes
+64 bytes from 117.51.1.4: icmp_seq=0 ttl=51 time=30.129 ms
+64 bytes from 117.51.1.4: icmp_seq=1 ttl=51 time=29.907 ms
+64 bytes from 117.51.1.4: icmp_seq=2 ttl=51 time=22.306 ms
+64 bytes from 117.51.1.4: icmp_seq=3 ttl=51 time=30.791 ms
+64 bytes from 117.51.1.4: icmp_seq=4 ttl=51 time=28.415 ms
+64 bytes from 117.51.1.4: icmp_seq=5 ttl=51 time=31.430 ms
+64 bytes from 117.51.1.4: icmp_seq=6 ttl=51 time=29.217 ms
+64 bytes from 117.51.1.4: icmp_seq=7 ttl=51 time=29.329 ms
+64 bytes from 117.51.1.4: icmp_seq=8 ttl=51 time=30.730 ms
+64 bytes from 117.51.1.4: icmp_seq=9 ttl=51 time=29.799 ms
+
+--- us01.router.didiglobal.com ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.306/29.205/31.430/2.444 ms
+
+The avg for this site's RTT is 29.631000
+/////////////////////////////////////////////////////////////
+For Destination 6: www.didichuxing.com, we get mediocre results but I did want to test this out. We go from Newark->NY-> China's telecom and get block quickly which makes some sense for this site. So we can't assume much for this.
+
+###############################################################
+###############################################################
+
+ 1  openrg (192.168.1.1)  3.456 ms  1.344 ms  2.553 ms
+ 2  10.240.170.153 (10.240.170.153)  14.465 ms  11.516 ms  14.984 ms
+ 3  67.59.248.210 (67.59.248.210)  16.533 ms  12.997 ms  17.973 ms
+ 4  ool-4353f300.dyn.optonline.net.243.83.67.in-addr.arpa (67.83.243.0)  21.609 ms  18.699 ms  20.167 ms
+ 5  64.15.7.80 (64.15.7.80)  16.002 ms
+    67.59.239.119 (67.59.239.119)  18.176 ms  14.649 ms
+ 6  64.15.0.8 (64.15.0.8)  17.595 ms
+    451be031.cst.lightpath.net (65.19.98.49)  15.978 ms
+    64.15.0.8 (64.15.0.8)  14.566 ms
+ 7  451be0c2.cst.lightpath.net (65.19.113.194)  20.988 ms  20.534 ms  22.116 ms
+ 8  equinix.dc2.ash.oneandone.net (206.126.236.200)  23.824 ms  32.944 ms  30.584 ms
+ 9  te-7-1-0.bb-a.bv.crb.fr.oneandone.net (74.208.6.101)  100.928 ms  99.019 ms  100.541 ms
+10  ae-8-0.bb-a.bap.rhr.de.oneandone.net (212.227.120.42)  108.587 ms  105.197 ms
+    ae-3.bb-b.slr.lxa.us.oneandone.net (74.208.6.178)  140.309 ms
+11  ae-0-0.gw-diste2-a.bap.rhr.de.oneandone.net (212.227.121.176)  107.430 ms  105.097 ms  105.873 ms
+12  * * te-7-1-0.bb-a.bv.crb.fr.oneandone.net (74.208.6.101)  137.627 ms
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  *
+///////////////////////////////////////////////////////////////////////////
+PING www.g-ha-web.de (82.165.229.138): 56 data bytes
+64 bytes from 82.165.229.138: icmp_seq=0 ttl=242 time=139.955 ms
+64 bytes from 82.165.229.138: icmp_seq=1 ttl=242 time=149.336 ms
+64 bytes from 82.165.229.138: icmp_seq=2 ttl=242 time=145.272 ms
+64 bytes from 82.165.229.138: icmp_seq=3 ttl=242 time=147.882 ms
+64 bytes from 82.165.229.138: icmp_seq=4 ttl=242 time=147.486 ms
+64 bytes from 82.165.229.138: icmp_seq=5 ttl=242 time=145.683 ms
+64 bytes from 82.165.229.138: icmp_seq=6 ttl=242 time=145.638 ms
+64 bytes from 82.165.229.138: icmp_seq=7 ttl=242 time=141.160 ms
+64 bytes from 82.165.229.138: icmp_seq=8 ttl=242 time=153.808 ms
+64 bytes from 82.165.229.138: icmp_seq=9 ttl=242 time=145.518 ms
+
+--- www.g-ha-web.de ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 139.955/146.174/153.808/3.722 ms
+
+The avg for this site's RTT is 146.710000
+//////////////////////////////////////////////////////
+For Destination 7: www.web.de, we see that we move from the US->Germany where the site is mainly used and then to France which may mean France is where the company uses some services or it sent me there for an odd reason.
+
+##################################################################
+##################################################################
+
+ 1  openrg (192.168.1.1)  7.791 ms  2.835 ms  2.554 ms
+ 2  10.240.170.153 (10.240.170.153)  18.553 ms  21.476 ms  13.209 ms
+ 3  67.59.248.218 (67.59.248.218)  26.292 ms  23.219 ms  15.164 ms
+ 4  67.83.243.4 (67.83.243.4)  26.538 ms  18.401 ms
+    dstswr1-ge1-1.rh.bynnnj.cv.net (67.83.243.6)  18.390 ms
+ 5  64.15.7.74 (64.15.7.74)  17.518 ms
+    64.15.7.72 (64.15.7.72)  14.959 ms  15.078 ms
+ 6  64.15.0.68 (64.15.0.68)  17.596 ms
+    451be031.cst.lightpath.net (65.19.98.49)  16.394 ms
+    451be0de.cst.lightpath.net (65.19.120.222)  15.390 ms
+ 7  be3033.rcr21.ewr02.atlas.cogentco.com (154.54.11.77)  16.522 ms *  18.624 ms
+ 8  be2600.rcr23.jfk01.atlas.cogentco.com (154.54.40.29)  28.883 ms
+    be3363.ccr42.jfk02.atlas.cogentco.com (154.54.3.125)  18.036 ms
+    be2600.rcr23.jfk01.atlas.cogentco.com (154.54.40.29)  18.149 ms
+ 9  be2317.ccr41.lon13.atlas.cogentco.com (154.54.30.186)  88.469 ms
+    be2490.ccr42.lon13.atlas.cogentco.com (154.54.42.86)  85.888 ms
+    be2896.ccr41.jfk02.atlas.cogentco.com (154.54.84.201)  20.128 ms
+10  be12488.ccr42.ams03.atlas.cogentco.com (130.117.51.42)  101.391 ms
+    be2490.ccr42.lon13.atlas.cogentco.com (154.54.42.86)  91.380 ms  96.221 ms
+11  be2519.rcr21.b015960-1.ams03.atlas.cogentco.com (130.117.3.98)  95.478 ms
+    be12194.ccr41.ams03.atlas.cogentco.com (154.54.56.94)  93.656 ms
+    be3457.ccr21.ams04.atlas.cogentco.com (130.117.1.10)  91.337 ms
+12  be2519.rcr21.b015960-1.ams03.atlas.cogentco.com (130.117.3.98)  95.701 ms
+    transip-bv.demarc.cogentco.com (149.6.128.66)  106.260 ms
+    be3458.ccr21.ams04.atlas.cogentco.com (154.54.39.186)  110.317 ms
+13  e1-a8.r2.ams0.transip.net (157.97.168.5)  100.981 ms
+    transip-bv.demarc.cogentco.com (149.6.128.70)  97.730 ms
+    e1-a8.r2.ams0.transip.net (157.97.168.5)  104.503 ms
+14  e1-a7.r1.ams0.transip.net (157.97.168.0)  101.965 ms
+    r1-a0.r2.ams0.transip.net (157.97.168.7)  95.241 ms
+    e1-a7.r1.ams0.transip.net (157.97.168.0)  92.663 ms
+15  reserved.transip.nl (37.97.254.27)  97.185 ms !Z  95.635 ms !Z  107.611 ms !Z
+//////////////////////////////////////////////////////////////////
+
+PING lemonade.fr (37.97.254.27): 56 data bytes
+64 bytes from 37.97.254.27: icmp_seq=0 ttl=53 time=98.624 ms
+64 bytes from 37.97.254.27: icmp_seq=1 ttl=53 time=109.231 ms
+64 bytes from 37.97.254.27: icmp_seq=2 ttl=53 time=103.104 ms
+64 bytes from 37.97.254.27: icmp_seq=3 ttl=53 time=102.740 ms
+64 bytes from 37.97.254.27: icmp_seq=4 ttl=53 time=104.643 ms
+64 bytes from 37.97.254.27: icmp_seq=5 ttl=53 time=98.507 ms
+64 bytes from 37.97.254.27: icmp_seq=6 ttl=53 time=101.813 ms
+64 bytes from 37.97.254.27: icmp_seq=7 ttl=53 time=104.351 ms
+64 bytes from 37.97.254.27: icmp_seq=8 ttl=53 time=104.665 ms
+64 bytes from 37.97.254.27: icmp_seq=9 ttl=53 time=102.282 ms
+
+--- lemonade.fr ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 98.507/102.996/109.231/2.957 ms
+
+The avg for this site's RTT is 104.069000
+/////////////////////////////////////////////////////////////////
+For Destination 8: www.lemonade.fr we see the similar problem of JFK->LON but now see a similar problem of this analogous to Amsterdam and completes its time at Amsterdam. I am beginning to believe a lot of Europe traffic digitally goes through London now.
+
+################################################################
+################################################################
+
+ 1  openrg (192.168.1.1)  7.800 ms  1.785 ms  5.437 ms
+ 2  10.240.170.153 (10.240.170.153)  36.479 ms  29.352 ms  27.297 ms
+ 3  67.59.248.216 (67.59.248.216)  42.535 ms  28.545 ms  42.769 ms
+ 4  dstswr1-ge1-1.rh.bynnnj.cv.net (67.83.243.6)  26.849 ms  27.699 ms  27.086 ms
+ 5  67.59.251.66 (67.59.251.66)  31.851 ms
+    451be027.cst.lightpath.net (65.19.114.39)  30.614 ms
+    64.15.7.74 (64.15.7.74)  24.196 ms
+ 6  451be049.cst.lightpath.net (65.19.114.73)  30.786 ms  33.213 ms
+    64.15.2.200 (64.15.2.200)  28.688 ms
+ 7  * * *
+ 8  * * *
+ 9  ntt-level3-200g.newyorkcity6.level3.net (4.68.75.78)  22.572 ms  14.195 ms  25.745 ms
+10  ae-2.r25.nycmny01.us.bb.gin.ntt.net (129.250.3.97)  19.145 ms  23.219 ms  23.732 ms
+11  ae-9.r22.asbnva02.us.bb.gin.ntt.net (129.250.2.149)  23.446 ms  21.064 ms  21.916 ms
+12  ae-0.r23.asbnva02.us.bb.gin.ntt.net (129.250.3.85)  21.054 ms  24.585 ms  24.441 ms
+13  ae-2.r25.amstnl02.nl.bb.gin.ntt.net (129.250.6.163)  105.463 ms  107.545 ms  106.068 ms
+14  ae-3.r02.barcsp01.es.bb.gin.ntt.net (129.250.4.163)  121.604 ms  122.782 ms  136.367 ms
+15  ge-100-0-0-12.r02.barcsp01.es.ce.gin.ntt.net (81.93.217.2)  131.710 ms  123.898 ms  135.648 ms
+16  fw-bsd-e.ilimit.es (80.94.15.20)  128.186 ms  127.353 ms  119.995 ms
+17  www.pisos.com (80.94.3.90)  121.462 ms  118.395 ms  137.412 ms
+//////////////////////////////////////////////////////////////////
+
+PING www.pisos.com (80.94.3.90): 56 data bytes
+64 bytes from 80.94.3.90: icmp_seq=0 ttl=52 time=126.785 ms
+64 bytes from 80.94.3.90: icmp_seq=1 ttl=52 time=124.691 ms
+64 bytes from 80.94.3.90: icmp_seq=2 ttl=52 time=119.266 ms
+64 bytes from 80.94.3.90: icmp_seq=3 ttl=52 time=127.339 ms
+64 bytes from 80.94.3.90: icmp_seq=4 ttl=52 time=130.052 ms
+64 bytes from 80.94.3.90: icmp_seq=5 ttl=52 time=126.065 ms
+64 bytes from 80.94.3.90: icmp_seq=6 ttl=52 time=127.615 ms
+64 bytes from 80.94.3.90: icmp_seq=7 ttl=52 time=125.077 ms
+64 bytes from 80.94.3.90: icmp_seq=8 ttl=52 time=119.310 ms
+64 bytes from 80.94.3.90: icmp_seq=9 ttl=52 time=124.114 ms
+
+--- www.pisos.com ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 119.266/125.031/130.052/3.291 ms
+
+The avg for this site's RTT is 123.244000
+////////////////////////////////////////////////////////////////////
+For Destination 9: www.pisos.com , we can see we get sent from NY to London Stansted Airport to then Barcelona which is found in Spain where this website is located in. Now I would've wondered why go through the length of getting to London as opposed to Spain quickly since it is closer to NY.
+
+###############################################################
+###############################################################
+
+ 1  openrg (192.168.1.1)  9.511 ms  1.257 ms  2.327 ms
+ 2  10.240.170.153 (10.240.170.153)  11.492 ms  13.214 ms  13.031 ms
+ 3  67.59.248.210 (67.59.248.210)  20.644 ms  13.033 ms  13.714 ms
+ 4  ool-4353f300.dyn.optonline.net.243.83.67.in-addr.arpa (67.83.243.0)  15.749 ms  13.340 ms
+    dstswr1-ge2-2.rh.bynnnj.cv.net (67.83.243.2)  17.500 ms
+ 5  64.15.7.74 (64.15.7.74)  13.608 ms
+    64.15.7.72 (64.15.7.72)  17.018 ms  15.259 ms
+ 6  451be0ea.cst.lightpath.net (65.19.120.234)  20.537 ms
+    64.15.3.112 (64.15.3.112)  19.436 ms
+    451be0de.cst.lightpath.net (65.19.120.222)  18.224 ms
+ 7  be3033.rcr21.ewr02.atlas.cogentco.com (154.54.11.77)  14.055 ms  14.983 ms *
+ 8  be3363.ccr42.jfk02.atlas.cogentco.com (154.54.3.125)  22.735 ms
+    be2600.rcr23.jfk01.atlas.cogentco.com (154.54.40.29)  36.094 ms
+    be3362.ccr41.jfk02.atlas.cogentco.com (154.54.3.9)  16.667 ms
+ 9  be2896.ccr41.jfk02.atlas.cogentco.com (154.54.84.201)  14.718 ms
+    be3627.ccr41.par01.atlas.cogentco.com (66.28.4.198)  91.089 ms
+    be3628.ccr42.par01.atlas.cogentco.com (154.54.27.170)  88.823 ms
+10  be3325.ccr51.bio02.atlas.cogentco.com (130.117.48.205)  99.687 ms
+    be3628.ccr42.par01.atlas.cogentco.com (154.54.27.170)  87.083 ms  90.792 ms
+11  be3358.ccr32.mad05.atlas.cogentco.com (130.117.1.97)  110.040 ms
+    be3325.ccr51.bio02.atlas.cogentco.com (130.117.48.205)  102.903 ms
+    be3358.ccr32.mad05.atlas.cogentco.com (130.117.1.97)  105.884 ms
+12  be3358.ccr32.mad05.atlas.cogentco.com (130.117.1.97)  106.528 ms
+    be3355.ccr31.vlc02.atlas.cogentco.com (154.54.57.230)  110.371 ms
+    be3356.ccr31.vlc02.atlas.cogentco.com (154.54.57.242)  120.208 ms
+13  be3355.ccr31.vlc02.atlas.cogentco.com (154.54.57.230)  127.435 ms
+    be3356.ccr31.vlc02.atlas.cogentco.com (154.54.57.242)  113.097 ms
+    be3239.rcr21.svq01.atlas.cogentco.com (154.54.58.138)  124.576 ms
+14  be3239.rcr21.svq01.atlas.cogentco.com (154.54.58.138)  120.693 ms
+    comvive.svq-eqx.router.cogentco.com (149.11.18.202)  124.126 ms
+    be3239.rcr21.svq01.atlas.cogentco.com (154.54.58.138)  122.625 ms
+15  * comvive.svq-eqx.router.cogentco.com (149.11.18.202)  131.424 ms *
+16  * * *
+17  * * *
+//////////////////////////////////////////////////////////////////////////
+PING tupiso.com (93.93.70.177): 56 data bytes
+64 bytes from 93.93.70.177: icmp_seq=0 ttl=49 time=124.396 ms
+64 bytes from 93.93.70.177: icmp_seq=1 ttl=49 time=128.964 ms
+64 bytes from 93.93.70.177: icmp_seq=2 ttl=49 time=129.851 ms
+64 bytes from 93.93.70.177: icmp_seq=3 ttl=49 time=126.158 ms
+64 bytes from 93.93.70.177: icmp_seq=4 ttl=49 time=122.077 ms
+64 bytes from 93.93.70.177: icmp_seq=5 ttl=49 time=123.209 ms
+64 bytes from 93.93.70.177: icmp_seq=6 ttl=49 time=121.771 ms
+64 bytes from 93.93.70.177: icmp_seq=7 ttl=49 time=129.362 ms
+64 bytes from 93.93.70.177: icmp_seq=8 ttl=49 time=127.919 ms
+64 bytes from 93.93.70.177: icmp_seq=9 ttl=49 time=127.804 ms
+
+--- tupiso.com ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 121.771/126.151/129.851/2.920 ms
+
+The avg for this site's RTT is 127.167000
+///////////////////////////////////////////////////////////////
+Destination 10: www.tupiso.com takes to a new starting point, Paris from JFK(which came from EWR). Paris now takes us to Bilbao airport in Spain to then Madrid to then Valencia Airport and then finally Seville Airport(which looked neato). Now This confuses me on how this shot itself to Paris which is France overshooting Spain and not even touching London like previously. 
+
+In conclusion we can see packets are not being sent in the ideal shortest path that we would think and thus takes various paths possible due to other factors that we would be learning later in this course.
