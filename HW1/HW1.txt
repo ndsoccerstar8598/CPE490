@@ -3,12 +3,12 @@ CPE 490
 I pledge my honor that I have abided by the Stevens Honor System.
 
 For each of the websites I first ran a trace route and copied and pasted the file here under the label "Traceroute".
-I then pinged the websited 10 timesm the results of which can be seen under the "ping" title.
-I then used an awk file to just extract the average ping time from the ping command. This is always stared with the line "Awk generated".
-Finally, I provided an analysis of the traceroute under the heading "Anaylsis"
+I then pinged the websited 10 times, the results of which can be seen under the "ping" title.
+I then used an awk file to just extract the average ping time from the ping command. This is always started with the line "Awk generated".
+Finally, I provided an analysis of the traceroute under the heading "Anaylsis". First I give the 
 *************************************************************************************************
-Website 1: denmark.dk
-----------------------
+Website 1: denmark.dk - The offical website of Denmark
+-------------------------------------------------------------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  0.829 ms  1.295 ms  1.394 ms
@@ -50,11 +50,12 @@ rtt min/avg/max/mdev = 101.759/121.532/200.559/31.261 ms
 Awk generated: The avg for this site's round trip time is 121.532000
 -------------------------------------------------------------------------------------------------
 Analysis:
-NYC-> Newark, NJ-> Sligo, Ireland-> Dublin,Ireland-> London,England -> Amsterdam, Netherlands
+NYC-> Newark, NJ-> Sligo, Ireland-> Dublin,Ireland-> London,England -> (Altus, Oklahoma)? -> Amsterdam, Netherlands
 This is quite inefficient as it gets pinged around Ireland for quite a bit then goes to England, before finally going to the Netherlands. It probably goes to Denmark from there but we were blocked access after this line.
+We also see "lts" in lines 14 and 15, which is the airport in Altus, Oklahoma. It wouldn't really makes sense for this pac to come all the way back to America before going to the Netherlands but it is possible. 
 *************************************************************************************************
-Website 2: Qq.com
-----------------------
+Website 2: Qq.com - Chinese Social Media site
+---------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  3.769 ms  3.189 ms  3.459 ms
@@ -92,10 +93,11 @@ rtt min/avg/max/mdev = 234.465/319.298/631.407/155.229 ms
 Awk Generated: The avg for this site's round trip time is 319.298000
 -------------------------------------------------------------------------------------------------
 Analysis:
+Newark, NJ -> Los Angeles, CA -> China
 This one is interesting because we can see that it goes to Newark than to Los Angeles (LAX) and then right to China. This seems pretty effective, just interesting to see that it chooses to go across the continental US then across the Pacific, rather than over the Atlantic and across Europe.
 *************************************************************************************************
-Website 3: Samsung.com
-----------------------
+Website 3: Samsung.com - Korean Electronics Giant
+-------------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  31.069 ms  37.525 ms  37.623 ms
@@ -131,10 +133,11 @@ rtt min/avg/max/mdev = 4.389/11.812/31.279/8.034 ms
 Awk generated: The avg for this site's round trip time is 11.812000
 ------------------------------------------------------------------------------------------------
 Analysis:
+Newark, NJ -> Santiago, Chile -> Korea
 This one is pretty odd in the fact that we go to Newark, then we dont really know where we go next but we wind up in Santiago, Chile (SCL), then we go to Korea at the Samsung website that we need to be at. Don't really know what the logic of going to chile is, but maybe Samsung has some servers down there?
 ************************************************************************************************
-Website 4: dcfever.com
------------------------
+Website 4: dcfever.com - Chinese Photograph Website
+---------------------------------------------------
 Traceroute:
 
 1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  3.575 ms  9.097 ms  9.188 ms
@@ -179,8 +182,8 @@ Analysis:
 NYC-> San Jose, CA -> Santa Clara, CA -> Hong Kong, China.
 This seems like a fairly normal path. Only thing that seems slighty ineffective is that it gets bounced around in California for a little while before going to Hong Kong, where it gets bounced around a whole bunch. Interesting to see that it takes a similar path to the other website from Hong Kong.
 ***********************************************************************************************
-Website 5: vg.no
------------------
+Website 5: vg.no - Norwegian tabloid newspaper
+----------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  6.939 ms  7.629 ms  7.691 ms
@@ -216,10 +219,11 @@ rtt min/avg/max/mdev = 104.150/177.333/596.984/151.580 ms
 Awk generated: The avg for this site's round trip time is 177.333000
 ------------------------------------------------------------------------------------------------
 Analysis:
-Newark, NJ -> Oslo, Norway. This seems very efficient we go right from Newark to Norway and then bounce around a bunch in Norway to get to the place we need to be.
+Newark, NJ -> Oslo, Norway. 
+This seems very efficient we go right from Newark to Norway and then bounce around a bunch in Norway to get to the place we need to be.
 ************************************************************************************************
-Website 6: men.gov.ma
----------------------
+Website 6: men.gov.ma - Kingdom of Morocco Website Ministry of National Education
+---------------------------------------------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  2.759 ms  3.941 ms  3.990 ms
@@ -256,10 +260,11 @@ rtt min/avg/max/mdev = 124.657/212.068/464.003/125.372 ms
 Awk generated: The avg for this site's round trip time is 212.068000
 -----------------------------------------------------------------------------------------------
 Analysis:
+Newark, NJ -> NYC, NY -> Paris, France -> Moracco
 Here we take a pretty odd path into New York and then into what looks like France, then to our final destination in Moracco, pretty weird but definetley not the weirdest thing we have seen all day.
 ***********************************************************************************************
-Website 7: www.tokopedia.com
-------------------------
+Website 7: www.tokopedia.com - Indonesian Techonology Company
+-------------------------------------------------------------
 Traceroute:
 
  1  * FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  72.208 ms  72.251 ms
@@ -304,8 +309,8 @@ Analysis:
 New York -> San Jose -> Santa Clara -> Chiba, Japan -> Singapore
 This makes mostly sense except for going to Japan to go to Singapore. This seems quite a bit out of the way, but may be the easiest way for the packet to get across the Pacific Ocean.
 ***********************************************************************************************
-Website 8: www.bit.ly
-----------
+Website 8: www.bit.ly - URL shortener
+-------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  38.248 ms  61.990 ms  73.150 ms
@@ -351,10 +356,10 @@ Awk Generated: The avg for this site's round trip time is 21.762000
 -----------------------------------------------------------------------------------------------
 Analysis:
 Newark-> NYC -> Long Island, NYC ->  Amesterdam, Netherlands -> Long Island, NYC -> San Jose, CA -> Denver, CO -> wdc (washington DC).
-This one is all over the play. We bounce around NY go to the Netherlands, come back to New York, then go all the way to California, to go to Denver Colarado. We then come back to wdc, which i think could be Washington, DC but that would be a very convulted path for the packet to get from the East Coast to somewhere else on the east coast.
+This one is all over the play. We bounce around NY go to the Netherlands, come back to New York, then go all the way to California, then to Denver, Colarado. We then come back to wdc, which i think could be Washington, DC but that would be a very convulted path for the packet to get from the East Coast to somewhere else on the East Coast.
 
 ***********************************************************************************************  
-Website 9: www.uloz.to
+Website 9: www.uloz.to - Czech Republic Free file sharing website
 ----------
 Traceroute:
 
@@ -399,8 +404,8 @@ NYC -> Washington, DC -> NYC -> Vienna, Austria -> Prague, CZ -> Parana, Argenti
 
 This one makes no sense to me. We go from NYC to Washington which is a waste, since we are just staying on the East Cost. Then we go to Austria and then Czech Republic (where we need to be) but then we come back to Argentina. Very odd...
 **********************************************************************************************
-Website 10: earthlink.iq
-----------
+Website 10: earthlink.iq - IT Services and Internet Connectivity to consumers/ buisness (ironic?)
+-------------------------------------------------------------------------------------------------
 Traceroute:
 
  1  FIOS_Quantum_Gateway.fios-router.home (192.168.1.1)  0.846 ms  2.310 ms  2.356 ms
